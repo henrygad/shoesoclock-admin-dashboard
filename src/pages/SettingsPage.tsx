@@ -1,7 +1,7 @@
 
 
 const SettingsPage = () => {
-  return <div>SettingsPage</div>;
+  return <></>;
 };
 
 export default SettingsPage;
