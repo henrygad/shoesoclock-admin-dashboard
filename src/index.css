@@ -1,1 +1,19 @@
 @import "tailwindcss";
+/* Set up design tokens with @theme */
+@theme {
+    /* Breakpoints */
+    --breakpoint-sm: 480px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 976px;
+    --breakpoint-xl: 1440px;
+
+    /* Fonts */
+    --font-main: "Plus Jakarta Sans",
+        "Noto Sans",
+        sans-serif;
+}
+
+/* Add your font-family utilities */
+@utility font-main {
+    font-family: var(--font-main);
+}

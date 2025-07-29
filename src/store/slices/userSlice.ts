@@ -2,13 +2,23 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
 interface UserState {
-  name: string;
-  isAdmin: boolean;
+  email: string,
+  isLogin: boolean,
+  adminInfo: {
+    name: string,
+    isAdmin: boolean,
+    profilePhoto: string
+  }
 }
 
 const initialState: UserState = {
-  name: "",
-  isAdmin: false,
+  email: "",
+  isLogin: false,
+  adminInfo: {
+    name: "",
+    isAdmin: false,
+    profilePhoto: ""
+  }
 };
 
 const userSlice = createSlice({
@@ -17,17 +27,30 @@ const userSlice = createSlice({
   reducers: {
     login: (
       state,
-      action: PayloadAction<{ name: string; isAdmin: boolean }>
+      action: PayloadAction<{ email: string }>
     ) => {
-      state.name = action.payload.name;
-      state.isAdmin = action.payload.isAdmin;
+      state.email = action.payload.email;
+      state.isLogin = true;
     },
     logout: (state) => {
-      state.name = "";
-      state.isAdmin = false;
+      state.email = "";
+      state.isLogin = false;
+      state.adminInfo = initialState["adminInfo"];
+    },
+    getAdminInfo: (
+      state,
+      action: PayloadAction<{ adminInfo: UserState["adminInfo"] }>
+    ) => {
+      state.adminInfo = action.payload.adminInfo;
+    },
+    updateAdminInfor: (
+      state,
+      action: PayloadAction<{ adminInfo: UserState["adminInfo"] }>
+    ) => {
+      state.adminInfo = { ...state.adminInfo, ...action.payload.adminInfo };
     },
   },
 });
 
-export const { login, logout } = userSlice.actions;
+export const { login, logout, getAdminInfo, updateAdminInfor } = userSlice.actions;
 export default userSlice.reducer;

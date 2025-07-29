@@ -6,7 +6,6 @@ const NotFoundPage = lazy(() => import("./NotFoundPage"));
 const NotificationsPage = lazy(() => import("./NotificationsPage"));
 const DiscountsPage = lazy(() => import("./DiscountsPage"));
 const AddDiscountsPage = lazy(() => import("./AddDiscountsPage"));
-const ProductImagePage = lazy(() => import("./ProductImagesPage"));
 const CustomersPage = lazy(() => import("./CustomersPage"));
 const ProductsPage = lazy(() => import("./ProductsPage"));
 const OrdersPage = lazy(() => import("./OrdersPage"));
@@ -22,8 +21,7 @@ export {
   NotFoundPage,
   NotificationsPage,
   DiscountsPage,
-  AddDiscountsPage,
-  ProductImagePage,
+  AddDiscountsPage,  
   CustomersPage,
   ProductsPage,
   OrdersPage,
