@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const SideNav = () => {
+const DesktopNav = () => {
   const navigate = useNavigate();
   return (
     <>
@@ -133,4 +133,4 @@ const SideNav = () => {
   );
 };
 
-export default SideNav;
+export default DesktopNav;
