@@ -18,7 +18,9 @@ import {
 } from "./pages";
 import { getAdminInfo} from "./store/slices/userSlice";
 import { useAppDispatch, useAppSelector } from "./store";
-import { HeaderNav, SideNav } from "./sections";
+import HeaderNav from "./sections/header/Index";
+import DesktopNav from "./sections/desktopnavigation/Index";
+import MobileNav from "./sections/mobilenavigation/Index";
 
 const App = () => {
   const dispatch = useAppDispatch();
@@ -52,10 +54,10 @@ const App = () => {
         )}
         {/* Main content section */}
         <main className="flex-1 flex overflow-hidden">
-          {/* Side navigation section */}
+          {/* Desktop navigation section */}
           {user.isLogin && (
-            <nav className="flex justify-start w-60 md:w-72 overflow-y-auto scroll-smooth overflow-x-hidden">
-              <SideNav />
+            <nav className="hidden md:flex justify-start w-72 overflow-y-auto scroll-smooth overflow-x-hidden">
+              <DesktopNav />
             </nav>
           )}
           {/* The section that hold each page content */}
@@ -161,8 +163,13 @@ const App = () => {
         </main>
         {/* footer section */}
         {user.isLogin && (
-          <footer className="h-4">
-            <span className="block text-center">Footer</span>
+          <footer className="w-full flex items-center overflow-hidden">
+            {/* Mobile navigation section */}
+            {user.isLogin && (
+              <nav className="flex-1 flex md:hidden justify-start w-full overflow-hidden bg-transparent p-1.5">                
+                <MobileNav />
+              </nav>
+            )}
           </footer>
         )}
       </div>
