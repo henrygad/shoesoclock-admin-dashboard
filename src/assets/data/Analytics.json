@@ -1,0 +1,20 @@
+[
+  {
+    "product": "Summer Dress",
+    "category": "Clothing",
+    "units_sold": 1200,
+    "revenue": "$30,000"
+  },
+  {
+    "product": "Leather Boots",
+    "category": "Shoes",
+    "units_sold": 800,
+    "revenue": "$24,000"
+  },
+  {
+    "product": "Silver Necklace",
+    "category": "Jewelry",
+    "units_sold": 1000,
+    "revenue": "$15,000"
+  }
+]

@@ -68,9 +68,6 @@ justify-center   place-items-center
 </div>
    
      <img src={Image} alt="Bethora Logo"  />
-
-
-44
        </div> 
        </div>
       </CenterPageContentUi>

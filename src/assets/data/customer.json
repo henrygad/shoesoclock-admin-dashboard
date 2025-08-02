@@ -1,0 +1,82 @@
+[
+  {
+    "Name": "Sophia Carter",
+    "Email": "sophia.carter@email.com",
+    "Location": "New York, USA",
+    "Orders": 12,
+    "Spent": 1200,
+    "Status": "Active"
+  },
+  {
+    "Name": "Liam Bennett",
+    "Email": "liam.bennett@email.com",
+    "Location": "London, UK",
+    "Orders": 8,
+    "Spent": 850,
+    "Status": "Active"
+  },
+  {
+    "Name": "Olivia Hayes",
+    "Email": "olivia.hayes@email.com",
+    "Location": "Paris, France",
+    "Orders": 5,
+    "Spent": 500,
+    "Status": "Inactive"
+  },
+  {
+    "Name": "Noah Parker",
+    "Email": "noah.parker@email.com",
+    "Location": "Berlin, Germany",
+    "Orders": 15,
+    "Spent": 1500,
+    "Status": "Active"
+  },
+  {
+    "Name": "Ava Mitchell",
+    "Email": "ava.mitchell@email.com",
+    "Location": "Tokyo, Japan",
+    "Orders": 7,
+    "Spent": 700,
+    "Status": "Active"
+  },
+  {
+    "Name": "Ethan Reed",
+    "Email": "ethan.reed@email.com",
+    "Location": "Sydney, Australia",
+    "Orders": 10,
+    "Spent": 1000,
+    "Status": "Active"
+  },
+  {
+    "Name": "Isabella Foster",
+    "Email": "isabella.foster@email.com",
+    "Location": "Toronto, Canada",
+    "Orders": 6,
+    "Spent": 600,
+    "Status": "Inactive"
+  },
+  {
+    "Name": "Mason Brooks",
+    "Email": "mason.brooks@email.com",
+    "Location": "Rome, Italy",
+    "Orders": 9,
+    "Spent": 950,
+    "Status": "Active"
+  },
+  {
+    "Name": "Mia Coleman",
+    "Email": "mia.coleman@email.com",
+    "Location": "Madrid, Spain",
+    "Orders": 4,
+    "Spent": 400,
+    "Status": "Inactive"
+  },
+  {
+    "Name": "Alexander Ward",
+    "Email": "alexander.ward@email.com",
+    "Location": "Seoul, South Korea",
+    "Orders": 11,
+    "Spent": 1100,
+    "Status": "Active"
+  }
+]
