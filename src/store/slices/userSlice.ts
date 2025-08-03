@@ -25,8 +25,10 @@ const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    status: (state) => {
-      state.status = "AUTHENTICATED";
+    status: (state, 
+      action: PayloadAction<{ status: UserState["status"] }>
+    ) => {
+      state.status = action.payload.status;
     },
     login: (
       state,

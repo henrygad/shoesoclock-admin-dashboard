@@ -7,15 +7,13 @@ import { status } from "../store/slices/userSlice";
 const Protect = ({ children }: { children: ReactNode }) => {
     const user = useAppSelector(state => state.user);
     const appDispatch = useAppDispatch();
-    let count = 0;
 
     useEffect(() => {
         // Check whether user cookie session
         // in the backend is till valid on refresh.
         // This will return an object containing 
-        //  {email, username or id}, to prove user is till login from the backend
-        console.log(count++);
-        appDispatch(status());
+        //  {email, username or id}, to prove user is till login from the backend        
+        appDispatch(status({status: "UNAUTHENTICATED"}));
     }, []);
 
     if (user.status === "LOADING") {

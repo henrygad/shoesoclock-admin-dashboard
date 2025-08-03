@@ -24,7 +24,7 @@ const App = () => {
 
   return <Suspense fallback={<div>Lazy Loading...</div>}>
     <Routes>
-      <Route path="/login" element={user.status === "UNAUTHENTICATED" ? <LoginPage /> : <Navigate to="/" />} />
+      <Route path="/login" element={<LoginPage />} />
       <Route path="/" element={<DashboardLayout />}>
         <Route index element={<DashboardPage />} />
         <Route path="/products" element={<ProductsPage />} />
