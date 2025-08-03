@@ -1,6 +1,5 @@
 
 
-
 const Index = () => {
     return <>
         <div className="flex flex-wrap justify-between gap-3 p-4">

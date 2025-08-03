@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> dev
 
 const OrdersPage = () => {
     return <>

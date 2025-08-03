@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-
-
->>>>>>> dev
 
 const SettingsPage = () => {
   return <>
