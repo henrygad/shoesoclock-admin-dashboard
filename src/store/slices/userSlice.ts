@@ -3,7 +3,7 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 
 interface UserState {
   email: string,
-  isLogin: boolean,
+  status: "LOADING" | "AUTHENTICATED" | "UNAUTHENTICATED",
   adminInfo: {
     name: string,
     isAdmin: boolean,
@@ -13,7 +13,7 @@ interface UserState {
 
 const initialState: UserState = {
   email: "",
-  isLogin: false,
+  status: "LOADING",
   adminInfo: {
     name: "",
     isAdmin: false,
@@ -25,19 +25,22 @@ const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
+    status: (state) => {
+      state.status = "AUTHENTICATED";
+    },
     login: (
       state,
       action: PayloadAction<{ email: string }>
     ) => {
       state.email = action.payload.email;
-      state.isLogin = true;
+      state.status = "AUTHENTICATED";
     },
     logout: (state) => {
       state.email = "";
-      state.isLogin = false;
+      state.status = "UNAUTHENTICATED";
       state.adminInfo = initialState["adminInfo"];
     },
-    getAdminInfo: (
+    fetchAdminInfo: (
       state,
       action: PayloadAction<{ adminInfo: UserState["adminInfo"] }>
     ) => {
@@ -52,5 +55,5 @@ const userSlice = createSlice({
   },
 });
 
-export const { login, logout, getAdminInfo, updateAdminInfor } = userSlice.actions;
+export const {status, login, logout, fetchAdminInfo, updateAdminInfor } = userSlice.actions;
 export default userSlice.reducer;

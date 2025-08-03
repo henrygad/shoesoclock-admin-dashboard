@@ -4,7 +4,7 @@ const DesktopNav = () => {
   const navigate = useNavigate();
   return (
     <>
-      <menu className="flex-1 flex justify-start p-4 border-r border-[#f4f0f0] ">
+      <menu className="hidden flex-1 md:flex justify-start p-4 border-r border-[#f4f0f0] ">
         <ul className="flex-1 flex flex-col gap-2 text-[#181111]">
           <li
             className="flex items-center gap-3 px-3 py-2 w-full cursor-pointer"

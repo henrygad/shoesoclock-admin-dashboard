@@ -1,6 +1,6 @@
 
 
-const NotificationHeaderBtn = () => {
+const NotificationButtonUI = () => {
     return <>
         <button
             className="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f4f0f0] text-[#181111] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
@@ -16,4 +16,4 @@ const NotificationHeaderBtn = () => {
     </>;
 };
 
-export default NotificationHeaderBtn;
+export default NotificationButtonUI;

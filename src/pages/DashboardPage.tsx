@@ -1,9 +1,7 @@
-import CenterPageContentUi from "../ui/page/CenterPageContentUi";
-
 
 const DashboardPage = () => {
 
-    return <CenterPageContentUi >
+    return <>
         <div className="flex flex-wrap justify-between gap-3 p-4">
             <div className="flex min-w-72 flex-col gap-3">
                 <p className="text-[#181111] tracking-light text-[32px] font-bold leading-tight">Dashboard</p>
@@ -192,7 +190,7 @@ const DashboardPage = () => {
                 </table>
             </div>
         </div>
-    </CenterPageContentUi>;
+    </>;
 };
 
 export default DashboardPage;
