@@ -1,5 +1,3 @@
-import CenterPageContentUi from "../ui/page/CenterPageContentUi";
-
 
 const SettingsPage = () => {
   return <>
