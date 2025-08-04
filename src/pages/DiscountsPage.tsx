@@ -1,8 +1,6 @@
-import CenterPageContentUi from "../ui/page/CenterPageContentUi";
 
 const DiscountsPage = () => {
     return <>
-        <CenterPageContentUi>
             <div className="flex flex-wrap justify-between gap-3 p-4">
                 <p className="text-[#171212] tracking-light text-[32px] font-bold leading-tight min-w-72">Discounts</p>
                 <button
@@ -151,7 +149,6 @@ const DiscountsPage = () => {
                     </table>
                 </div>               
             </div>
-        </CenterPageContentUi>
     </>;
 };
 

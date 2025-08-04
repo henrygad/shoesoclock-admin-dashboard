@@ -16,162 +16,71 @@ import {
   ProductDetailsPage,
   LoginPage,
 } from "./pages";
-import { getAdminInfo} from "./store/slices/userSlice";
 import { useAppDispatch, useAppSelector } from "./store";
-import HeaderNav from "./sections/header/Index";
-import DesktopNav from "./sections/desktopnavigation/Index";
-import MobileNav from "./sections/mobilenavigation/Index";
+import DashboardLayout from "./components/DashboardLayout";
+import { fetchAdminInfo, status } from "./store/slices/userSlice";
 
 const App = () => {
-  const dispatch = useAppDispatch();
   const user = useAppSelector((state) => state.user);
+  const appDispatch = useAppDispatch();
 
   useEffect(() => {
-    if (user.isLogin) {
-      dispatch(
-        getAdminInfo({
-          adminInfo: {
-            name: "henry",
-            profilePhoto: "profilephoto.png",
-            isAdmin: true,
-          },
-        })
-      );
-    }
-  }, [user.isLogin]);
+    // Check whether user cookie session
+    // in the backend is till valid on refresh.
+    // This will return an object containing
+    //  {email, username or id}, to prove user is till login from the backend
+    appDispatch(status({ status: "UNAUTHENTICATED" }));    
+  }, []);
+
+
+  useEffect(() => {
+    if (user.status !== "AUTHENTICATED") return;
+
+      appDispatch(fetchAdminInfo({
+        adminInfo: {
+          name: "mrs admin",
+          isAdmin: true,
+          profilePhoto: "mrsadmin.png"
+        }
+      }));
+    
+  }, [user.status]);
 
   return (
     <div className="relative font-main size-full h-screen flex flex-col bg-white group/design-root overflow-hidden">
       <div className="layout-container flex-1 flex h-full grow flex-col">
-        {/* Header section*/}
-        {user.isLogin && (
-          <header className="border-b border-solid border-b-[#f4f0f0] px-10 py-3">
-            {/* Header navigation for logo , notification btn, admin profile photo */}
-            <nav className="flex-1 flex items-center justify-between whitespace-nowrap">
-              <HeaderNav />
-            </nav>
-          </header>
-        )}
-        {/* Main content section */}
-        <main className="flex-1 flex overflow-hidden">
-          {/* Desktop navigation section */}
-          {user.isLogin && (
-            <nav className="hidden md:flex justify-start w-72 overflow-y-auto scroll-smooth overflow-x-hidden">
-              <DesktopNav />
-            </nav>
-          )}
-          {/* The section that hold each page content */}
-          <div className="flex-1 overflow-y-auto scroll-smooth overflow-x-hidden">
-            <Suspense fallback={<div>Loading...</div>}>
-              <Routes>
-                <Route
-                  path="/"
-                  element={
-                    user.isLogin ? <DashboardPage /> : <Navigate to="/login" />
-                  }
-                />
-                <Route
-                  path="/login"
-                  element={!user.isLogin ? <LoginPage /> : <Navigate to="/" />}
-                />
-                <Route
-                  path="/products"
-                  element={
-                    user.isLogin ? <ProductsPage /> : <Navigate to="/login" />
-                  }
-                />
-                <Route
-                  path="/orders"
-                  element={
-                    user.isLogin ? <OrdersPage /> : <Navigate to="/login" />
-                  }
-                />
-                <Route
-                  path="/add-product"
-                  element={
-                    user.isLogin ? <AddProductPage /> : <Navigate to="/login" />
-                  }
-                />
-                <Route
-                  path="/customers"
-                  element={
-                    user.isLogin ? <CustomersPage /> : <Navigate to="/login" />
-                  }
-                />
-                <Route
-                  path="/notifications"
-                  element={
-                    user.isLogin ? (
-                      <NotificationsPage />
-                    ) : (
-                      <Navigate to="/login" />
-                    )
-                  }
-                />
-                <Route
-                  path="/discounts"
-                  element={
-                    user.isLogin ? <DiscountsPage /> : <Navigate to="/login" />
-                  }
-                />
-                <Route
-                  path="/add-discount"
-                  element={
-                    user.isLogin ? (
-                      <AddDiscountsPage />
-                    ) : (
-                      <Navigate to="/login" />
-                    )
-                  }
-                />
-                <Route
-                  path="/order-details/:id"
-                  element={
-                    user.isLogin ? (
-                      <OrderDetailsPage />
-                    ) : (
-                      <Navigate to="/login" />
-                    )
-                  }
-                />
-                <Route
-                  path="/analytics"
-                  element={
-                    user.isLogin ? <AnalyticsPage /> : <Navigate to="/login" />
-                  }
-                />
-                <Route
-                  path="/product-details/:id"
-                  element={
-                    user.isLogin ? (
-                      <ProductDetailsPage />
-                    ) : (
-                      <Navigate to="/login" />
-                    )
-                  }
-                />
-                <Route
-                  path="/settings"
-                  element={
-                    user.isLogin ? <SettingsPage /> : <Navigate to="/login" />
-                  }
-                />
-                <Route path="*" element={<NotFoundPage />} />
-              </Routes>
-            </Suspense>
-          </div>
-        </main>
-        {/* footer section */}
-        {user.isLogin && (
-          <footer className="w-full flex items-center overflow-hidden">
-            {/* Mobile navigation section */}
-            {user.isLogin && (
-              <nav className="flex-1 flex md:hidden justify-start w-full overflow-hidden bg-transparent p-1.5">                
-                <MobileNav />
-              </nav>
-            )}
-          </footer>
-        )}
+        <Suspense fallback={<div>Lazy Loading...</div>}>
+          <Routes>
+            <Route
+              path="/login"
+              element={
+                user.status === "UNAUTHENTICATED" ? (
+                  <LoginPage />
+                ) : (
+                  <Navigate to="/" />
+                )
+              }
+            />
+            <Route path="/" element={<DashboardLayout />}>
+              <Route index element={<DashboardPage />} />
+              <Route path="/products" element={<ProductsPage />} />
+              <Route path="/orders" element={<OrdersPage />} />
+              <Route path="/add-product" element={<AddProductPage />} />
+              <Route path="/customers" element={<CustomersPage />} />
+              <Route path="/notifications" element={<NotificationsPage />} />
+              <Route path="/discounts" element={<DiscountsPage />} />
+              <Route path="/add-discount" element={<AddDiscountsPage />} />
+              <Route path="/order-details/:id" element={<OrderDetailsPage />} />
+              <Route path="/analytics" element={<AnalyticsPage />} />
+              <Route
+                path="/product-details/:id"
+                element={<ProductDetailsPage />}
+              />
+              <Route path="/settings" element={<SettingsPage />} />
+            </Route>
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Suspense>
       </div>
     </div>
   );

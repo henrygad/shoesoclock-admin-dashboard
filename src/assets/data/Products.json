@@ -1,0 +1,32 @@
+[
+  {
+    "Product": "ClassNameaclassNameic Tee",
+    "Inventory": 120,
+    "Status": "Active",
+    "Price": 25
+  },
+  {
+    "Product": "Cozy Hoodie",
+    "Inventory": 85,
+    "Status": "Active",
+    "Price": 50
+  },
+  {
+    "Product": "Leather Boots",
+    "Inventory": 45,
+    "Status": "Active",
+    "Price": 120
+  },
+  {
+    "Product": "Silver Necklace",
+    "Inventory": 200,
+    "Status": "Active",
+    "Price": 75
+  },
+  {
+    "Product": "Summer Dress",
+    "Inventory": 60,
+    "Status": "Active",
+    "Price": 40
+  }
+]
