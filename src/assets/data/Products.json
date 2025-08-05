@@ -1,32 +1,32 @@
 [
   {
-    "Product": "ClassNameaclassNameic Tee",
-    "Inventory": 120,
-    "Status": "Active",
-    "Price": 25
+    "product": "ClassNameaclassNameic Tee",
+    "inventory": 120,
+    "status": "Active",
+    "price": 25
   },
   {
-    "Product": "Cozy Hoodie",
-    "Inventory": 85,
-    "Status": "Active",
-    "Price": 50
+    "product": "Cozy Hoodie",
+    "inventory": 85,
+    "status": "Active",
+    "price": 50
   },
   {
-    "Product": "Leather Boots",
-    "Inventory": 45,
-    "Status": "Active",
-    "Price": 120
+    "product": "Leather Boots",
+    "inventory": 45,
+    "status": "Active",
+    "price": 120
   },
   {
-    "Product": "Silver Necklace",
-    "Inventory": 200,
-    "Status": "Active",
-    "Price": 75
+    "product": "Silver Necklace",
+    "inventory": 200,
+    "status": "Active",
+    "price": 75
   },
   {
-    "Product": "Summer Dress",
-    "Inventory": 60,
-    "Status": "Active",
-    "Price": 40
+    "product": "Summer Dress",
+    "inventory": 60,
+    "status": "Active",
+    "price": 40
   }
 ]

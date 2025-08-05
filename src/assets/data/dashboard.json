@@ -1,37 +1,37 @@
 [
   {
-    "OrderID": "#1001",
-    "Customer": "Emily Carter",
-    "Date": "2023-08-15",
-    "Status": "Shipped",
-    "Total": "$120"
+    "orderid": "#1001",
+    "customer": "Emily Carter",
+    "date": "2023-08-15",
+    "status": "Shipped",
+    "total": "$120"
   },
   {
-    "OrderID": "#1002",
-    "Customer": "David Lee",
-    "Date": "2023-08-14",
-    "Status": "Processing",
-    "Total": "$85"
+    "orderid": "#1002",
+    "customer": "David Lee",
+    "date": "2023-08-14",
+    "status": "Processing",
+    "total": "$85"
   },
   {
-    "OrderID": "#1003",
-    "Customer": "Olivia Brown",
-    "Date": "2023-08-13",
-    "Status": "Delivered",
-    "Total": "$150"
+    "orderid": "#1003",
+    "customer": "Olivia Brown",
+    "date": "2023-08-13",
+    "status": "Delivered",
+    "total": "$150"
   },
   {
-    "OrderID": "#1004",
-    "Customer": "Ethan Clark",
-    "Date": "2023-08-12",
-    "Status": "Shipped",
-    "Total": "$90"
+    "orderid": "#1004",
+    "customer": "Ethan Clark",
+    "date": "2023-08-12",
+    "status": "Shipped",
+    "total": "$90"
   },
   {
-    "OrderID": "#1005",
-    "Customer": "Sophia Green",
-    "Date": "2023-08-11",
-    "Status": "Delivered",
-    "Total": "$110"
+    "orderid": "#1005",
+    "customer": "Sophia Green",
+    "date": "2023-08-11",
+    "status": "Delivered",
+    "total": "$110"
   }
 ]
