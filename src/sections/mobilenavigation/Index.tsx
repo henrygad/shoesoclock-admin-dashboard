@@ -5,7 +5,8 @@ const MobileNav = () => {
     const navigate = useNavigate();
 
     return <>
-        <menu className="md:hidden flex-1 flex justify-center border-t border-[#f4f0f0] shadow-2xl rounded-2xl overflow-hidden">
+        <div className="mt-20"></div>
+        <menu className="fixed bottom-0 right-0 left-0 md:hidden flex-1 flex justify-center bg-white border-t border-[#f4f0f0] shadow-2xl overflow-hidden">
             <ul className="flex-1 flex justify-around gap-3 px-4 py-2 text-[#181111] overflow-x-auto scroll-smooth snap-x snap-mandatory overflow-y-hidden">
                 <li
                     className="flex flex-col items-center gap-1 p-2 w-full cursor-pointer snap-center"

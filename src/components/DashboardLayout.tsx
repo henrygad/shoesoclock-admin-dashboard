@@ -19,13 +19,13 @@ const DashboardLayout = () => {
     else if (user.status === "UNAUTHENTICATED") {
         return <Navigate to="/login" />;
     }
-
+    
     return <>
         <header className="border-b border-solid border-b-[#f4f0f0] px-4 sm:px-6 py-3">
             <Header />
         </header>
         <main className="flex-1 flex flex-col-reverse md:flex-row overflow-hidden">
-            <nav className="flex justify-start w-full md:w-72 overflow-y-auto scroll-smooth overflow-x-hidden">
+            <nav className="relative flex justify-start w-full md:w-72 overflow-y-auto scroll-smooth overflow-x-hidden">
                 <DesktopNav />
                 <MobileNav />
             </nav>
