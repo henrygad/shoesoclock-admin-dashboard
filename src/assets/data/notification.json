@@ -1,0 +1,37 @@
+{
+  "admin": {
+    "id": "user_admin_01",
+    "name": "Admin",
+    "avatar": "https://example.com/images/admin_avatar.png",
+    "role": "Administrator"
+  },
+  "notifications": [
+    {
+      "id": "notif_001",
+      "title": "System Update",
+      "message": "The server will be down for maintenance at midnight.",
+      "icon": "bell",
+      "type": "info",
+      "isRead": false,
+      "timestamp": "2025-08-10T22:10:00Z"
+    },
+    {
+      "id": "notif_002",
+      "title": "New User Registered",
+      "message": "John Doe has signed up for the platform.",
+      "icon": "user-plus",
+      "type": "success",
+      "isRead": true,
+      "timestamp": "2025-08-09T14:35:00Z"
+    },
+    {
+      "id": "notif_003",
+      "title": "Security Alert",
+      "message": "Multiple failed login attempts detected.",
+      "icon": "shield-alert",
+      "type": "warning",
+      "isRead": false,
+      "timestamp": "2025-08-08T07:50:00Z"
+    }
+  ]
+}
