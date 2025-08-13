@@ -1,4 +1,8 @@
 
+import CustomerData from "../assets/data/customer.json";
+import CustomerCard from "../components/customercard/Index";
+
+
 const CustomersPage = () => {
     return <>
         <div className="flex flex-wrap justify-between gap-3 p-4">
@@ -45,7 +49,27 @@ const CustomersPage = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className="border-t border-t-[#e5dcdc]">
+                        {
+                            CustomerData?.length ?
+                                CustomerData.map((customer) =>
+                                    <CustomerCard
+                                        key={customer.id}
+                                        id={customer.id}
+                                        name={customer.name}
+                                        email={customer.email}
+                                        location={customer.location}
+                                        order={customer.orders}
+                                        spent={customer.spent}
+                                        status={customer.status}
+                                    />
+                                ) :
+                                <tr className="border-t border-t-[#e5dcdc]">
+                                    <td className="h-[72px] px-4 py-2 w-full text-[#181111] text-sm font-normal leading-normal">
+                                        No customers
+                                    </td>
+                                </tr>
+                        }
+                        {/* <tr className="border-t border-t-[#e5dcdc]">
                             <td className="table-0a862da2-6b95-40e1-a752-3f3d37b53d65-column-120 h-[72px] px-4 py-2 w-[400px] text-[#181111] text-sm font-normal leading-normal">
                                 Sophia Carter
                             </td>
@@ -244,7 +268,7 @@ const CustomersPage = () => {
                                     <span className="truncate">Active</span>
                                 </button>
                             </td>
-                        </tr>
+                        </tr> */}
                     </tbody>
                 </table>
             </div>
