@@ -60,7 +60,7 @@ const CustomersPage = () => {
                                         location={customer.location}
                                         order={customer.orders}
                                         spent={customer.spent}
-                                        status={customer.status}
+                                        status={customer.status }
                                     />
                                 ) :
                                 <tr className="border-t border-t-[#e5dcdc]">

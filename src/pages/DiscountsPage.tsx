@@ -1,3 +1,7 @@
+import DiscountData from "../assets/data/discounts.json";
+import CouponCard from "../components/discounts.list/discounts";
+import type { CouponTypeProps } from "../components/discounts.list/types";
+
 
 const DiscountsPage = () => {
     return <>
@@ -29,7 +33,33 @@ const DiscountsPage = () => {
                                 <th className="table-30ce3cdf-9447-4a2c-bae9-a09b5ec3f7ed-column-840 px-4 py-3 text-left text-[#171212] w-60 text-sm font-medium leading-normal">Status</th>
                             </tr>
                         </thead>
-                        <tbody>
+  <tbody>
+              {DiscountData?.length ? (
+                DiscountData.map((coupon: CouponTypeProps) => (
+                  <CouponCard
+                    key={coupon.code}
+                    code={coupon.code}
+                    type={coupon.type}
+                    value={coupon.value}
+                    start_date={coupon.start_date}
+                    end_date={coupon.end_date}
+                    usage_limit={coupon.usage_limit}
+                    status={coupon.status}
+                  />
+                ))
+              ) : (
+                <tr className="border-t border-t-[#e5dcdc]">
+                  <td
+                    colSpan={7}
+                    className="h-[72px] px-4 py-2 w-full text-[#181111] text-sm font-normal leading-normal"
+                  >
+                    No discounts
+                  </td>
+                </tr>
+              )}
+            </tbody>
+                </table>
+             {/*            <tbody>
                             <tr className="border-t border-t-[#e4dddd]">
                                 <td className="table-30ce3cdf-9447-4a2c-bae9-a09b5ec3f7ed-column-120 h-[72px] px-4 py-2 w-[400px] text-[#171212] text-sm font-normal leading-normal">SUMMER20</td>
                                 <td className="table-30ce3cdf-9447-4a2c-bae9-a09b5ec3f7ed-column-240 h-[72px] px-4 py-2 w-[400px] text-[#82686a] text-sm font-normal leading-normal">
@@ -145,7 +175,7 @@ const DiscountsPage = () => {
                                     </button>
                                 </td>
                             </tr>
-                        </tbody>
+                        </tbody> */}
                     </table>
                 </div>               
             </div>

@@ -1,3 +1,5 @@
+import OrdersData from "../assets/data/orders.json";
+import OrderCard from "../components/orders/orders";
 
 const OrdersPage = () => {
     return <>
@@ -67,7 +69,20 @@ const OrdersPage = () => {
                             ></th>
                         </tr>
                     </thead>
-                    <tbody>
+                       <tbody>
+                            {OrdersData.length > 0 ? (
+                                OrdersData.map((item, index) => (
+                                    <OrderCard key={index} {...item} />
+                                ))
+                            ) : (
+                                <tr className="border-t border-t-[#e5dcdc]">
+                                    <td colSpan={6} className="h-[72px] px-4 py-2 w-full text-[#181111] text-sm font-normal leading-normal">
+                                        No Orders
+                                    </td>
+                                </tr>
+                            )}
+                        </tbody>
+                 {/*    <tbody>
                         <tr className="border-t border-t-[#e5dcdc]">
                             <td className="table-cfb6d4af-6e0e-44ae-a1b3-773e95fac24f-column-120 h-[72px] px-4 py-2 w-[400px] text-[#181111] text-sm font-normal leading-normal">#1001</td>
                             <td className="table-cfb6d4af-6e0e-44ae-a1b3-773e95fac24f-column-240 h-[72px] px-4 py-2 w-[400px] text-[#886364] text-sm font-normal leading-normal">
@@ -338,7 +353,7 @@ const OrdersPage = () => {
                                 View
                             </td>
                         </tr>
-                    </tbody>
+                    </tbody> */}
                 </table>
             </div>
         </div>
@@ -346,3 +361,7 @@ const OrdersPage = () => {
 };
 
 export default OrdersPage;
+
+
+
+///////

@@ -1,3 +1,5 @@
+import ProductsData from "../assets/data/products.json";
+import ProductCard from "../components/productslist/Index";
 
 
 const ProductsPage = () => {
@@ -59,7 +61,21 @@ const ProductsPage = () => {
                             <th className="table-f095d9f1-4542-48b9-83be-ae498a6219ff-column-480 px-4 py-3 text-left text-[#181111] w-[400px] text-sm font-medium leading-normal">Price</th>
                         </tr>
                     </thead>
-                    <tbody>
+                   <tbody>
+              {ProductsData.length > 0 ? (
+              ProductsData.map((item, index) => (
+                <ProductCard key={index} {...item} />
+              ))
+              ): (
+                  <tr className="border-t border-t-[#e5dcdc]">
+                                    <td className="h-[72px] px-4 py-2 w-full text-[#181111] text-sm font-normal leading-normal">
+                                        No Products
+                                    </td>
+                                </tr>
+              )}
+            </tbody>
+
+                   {/*  <tbody>
                         <tr className="border-t border-t-[#e5dcdc]">
                             <td className="table-f095d9f1-4542-48b9-83be-ae498a6219ff-column-120 h-[72px] px-4 py-2 w-[400px] text-[#181111] text-sm font-normal leading-normal">
                                 ClassNmaeclassNameic Tee
@@ -140,7 +156,7 @@ const ProductsPage = () => {
                             </td>
                             <td className="table-f095d9f1-4542-48b9-83be-ae498a6219ff-column-480 h-[72px] px-4 py-2 w-[400px] text-[#886364] text-sm font-normal leading-normal">$40</td>
                         </tr>
-                    </tbody>
+                    </tbody> */}
                 </table>
             </div>
         </div>
